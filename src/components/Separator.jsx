@@ -1,6 +1,6 @@
 const Separator = () => {
   return (
-    <div className="relative my-2">
+    <div className="relative ">
       <div className="absolute inset-0 flex items-center">
         <span className="w-full border-t border-slate-200 dark:border-slate-700"></span>
       </div>
