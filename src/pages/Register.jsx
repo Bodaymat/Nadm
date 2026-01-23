@@ -5,7 +5,7 @@ import Nav from "../components/Nav";
 import AuthField from "../components/AuthField";
 import EmailIcon from "../assets/mail.svg?react";
 import Person from "../assets/person.svg?react";
-import SubmitButton from "../components/SubmitButton";
+import Button from "../components/Button";
 import CTA from "../components/CTA";
 import Separator from "../components/Separator";
 import { LinkButton } from "../components/LinkButton";
@@ -41,7 +41,7 @@ const Register = () => {
                 placeholder={"name@example.com"}
               />
               <LinkButton href="/register/password" text="Continue" />
-              {/* <SubmitButton text="Create Account" /> */}
+              {/* <Button text="Create Account" /> */}
               <Separator />
               <CTA
                 prefix={"Already a member?"}

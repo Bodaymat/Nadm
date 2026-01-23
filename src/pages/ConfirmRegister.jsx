@@ -5,7 +5,8 @@ import Nav from "../components/Nav";
 import AuthField from "../components/AuthField";
 import LockIcon from "../assets/lock.svg?react";
 import LockOpenIcon from "../assets/lock_open.svg?react";
-import SubmitButton from "../components/SubmitButton";
+import Button from "../components/Button";
+import { LinkButton } from "../components/LinkButton";
 import CTA from "../components/CTA";
 import Separator from "../components/Separator";
 
@@ -39,7 +40,11 @@ const ConfirmRegister = () => {
                 inputType={"password"}
                 placeholder={"Re-enter your password"}
               />
-              <SubmitButton text="Create Account" />
+              {/* <Button text="Create Account" /> */}
+              <LinkButton
+                href="/register/confirm-email"
+                text="Create Account"
+              />
               <Separator />
               <CTA
                 prefix={"Already a member?"}

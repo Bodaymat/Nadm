@@ -5,7 +5,7 @@ import Nav from "../components/Nav";
 import AuthField from "../components/AuthField";
 import EmailIcon from "../assets/mail.svg?react";
 import LockIcon from "../assets/lock.svg?react";
-import SubmitButton from "../components/SubmitButton";
+import Button from "../components/Button";
 import CTA from "../components/CTA";
 import Separator from "../components/Separator";
 
@@ -44,7 +44,7 @@ const Login = () => {
                 position={"end"}
                 classNames="my-[-0.7rem]"
               />
-              <SubmitButton text="Sign in" />
+              <Button text="Sign in" />
               <Separator />
               <CTA
                 prefix={"Don't have an account?"}

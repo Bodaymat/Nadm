@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nadm - Verify Email</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17b0cf",
+                        "primary-hover": "#139bb7",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#111e21",
+                        "card-dark": "#1a2a2e",
+                        "border-dark": "#244147",
+                        "text-secondary": "#93bfc8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'glow': '0 0 15px rgba(23, 176, 207, 0.15)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111f22] dark:text-white min-h-screen flex flex-col font-display overflow-x-hidden selection:bg-primary selection:text-white">
+<div class="relative flex flex-col h-full grow">
+<header class="sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-200 dark:border-border-dark px-6 py-4 lg:px-40">
+<div class="max-w-[960px] mx-auto w-full flex items-center justify-between">
+<div class="flex items-center gap-3 text-white cursor-pointer hover:opacity-80 transition-opacity">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">spa</span>
+</div>
+<h2 class="text-[#111f22] dark:text-white text-xl font-bold tracking-tight">Nadm</h2>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col justify-center items-center py-8 lg:py-12 px-4 sm:px-6">
+<div class="w-full max-w-[480px] flex flex-col items-center text-center gap-8">
+<div class="relative">
+<div class="size-24 rounded-full bg-primary/10 flex items-center justify-center text-primary shadow-glow mb-2 animate-pulse">
+<span class="material-symbols-outlined text-[48px]">mark_email_unread</span>
+</div>
+<div class="absolute top-1 right-1 size-6 bg-background-light dark:bg-background-dark rounded-full flex items-center justify-center">
+<div class="size-3 bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<h1 class="text-[#111f22] dark:text-white text-3xl md:text-4xl font-bold tracking-tight">Check your inbox</h1>
+<p class="text-gray-600 dark:text-text-secondary text-base leading-relaxed">
+                        We've sent a verification link to <br/>
+<span class="font-semibold text-[#111f22] dark:text-white">nadm.user@example.com</span>
+</p>
+<p class="text-gray-600 dark:text-text-secondary text-sm">
+                        Please click the link in the email to activate your account and start your journey.
+                    </p>
+</div>
+<div class="w-full bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark rounded-xl p-5 flex gap-4 text-left shadow-sm">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 shrink-0 mt-0.5">info</span>
+<div>
+<h3 class="text-sm font-semibold text-[#111f22] dark:text-white">Can't find the email?</h3>
+<p class="text-xs text-gray-500 dark:text-text-secondary mt-1 leading-relaxed">
+                            Check your spam or junk folder. It may take a few minutes to arrive.
+                        </p>
+</div>
+</div>
+<div class="flex flex-col gap-4 w-full pt-2">
+<button class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary hover:bg-primary-hover text-white font-bold shadow-lg shadow-primary/25 transition-all transform hover:-translate-y-0.5 focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark">
+<span class="material-symbols-outlined text-[20px]">send</span>
+                        Resend Verification Email
+                    </button>
+<a class="text-sm font-medium text-gray-500 dark:text-text-secondary hover:text-primary dark:hover:text-primary transition-colors py-2" href="#">
+                        Back to Sign In
+                    </a>
+</div>
+</div>
+</main>
+</div>
+<div class="fixed inset-0 pointer-events-none z-[-1]">
+<div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-primary/5 rounded-full blur-[80px]"></div>
+</div>
+
+</body></html>
