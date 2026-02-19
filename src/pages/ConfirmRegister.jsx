@@ -9,8 +9,20 @@ import Button from "../components/Button";
 import { LinkButton } from "../components/LinkButton";
 import CTA from "../components/CTA";
 import Separator from "../components/Separator";
+import { useForm } from "react-hook-form";
 
 const ConfirmRegister = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => console.log(data);
+
+  const password = watch("password");
+
   return (
     <>
       <div className="flex flex-col bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white transition-colors duration-200 overflow-hidden min-h-screen relative">
@@ -25,13 +37,23 @@ const ConfirmRegister = () => {
               title="Join Nadm - Step 2 of 2"
               subtitle="Track your commitments in peace."
             />
-            <Form>
+            <Form onSubmit={handleSubmit(onSubmit)}>
               <AuthField
                 label={"password"}
                 labelText={"Password"}
                 Icon={LockIcon}
                 inputType={"password"}
                 placeholder={"Enter your password"}
+                isError={errors.password}
+                {...register("password", {
+                  required: "Password is required",
+                  pattern: {
+                    value:
+                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/,
+                    message:
+                      "Password must be 8+ chars, with uppercase, lowercase, number & special char",
+                  },
+                })}
               />
               <AuthField
                 label={"confirmPassword"}
@@ -39,12 +61,18 @@ const ConfirmRegister = () => {
                 Icon={LockOpenIcon}
                 inputType={"password"}
                 placeholder={"Re-enter your password"}
+                isError={errors.confirmPassword}
+                {...register("confirmPassword", {
+                  required: "Confirm Password is required",
+                  validate: (value) =>
+                    value === password || "Passwords do not match",
+                })}
               />
-              {/* <Button text="Create Account" /> */}
-              <LinkButton
+              <Button text="Create Account" />
+              {/* <LinkButton
                 href="/register/confirm-email"
                 text="Create Account"
-              />
+              /> */}
               <Separator />
               <CTA
                 prefix={"Already a member?"}

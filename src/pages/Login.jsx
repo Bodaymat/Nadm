@@ -8,8 +8,17 @@ import LockIcon from "../assets/lock.svg?react";
 import Button from "../components/Button";
 import CTA from "../components/CTA";
 import Separator from "../components/Separator";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => console.log(data);
+
   return (
     <>
       <div className="flex flex-col bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white transition-colors duration-200 overflow-hidden min-h-screen relative">
@@ -24,13 +33,21 @@ const Login = () => {
               title="Welcome back"
               subtitle="Track your commitments in peace."
             />
-            <Form>
+            <Form onSubmit={handleSubmit(onSubmit)}>
               <AuthField
                 label={"email"}
                 labelText={"Email address"}
                 Icon={EmailIcon}
                 inputType={"email"}
                 placeholder={"name@example.com"}
+                isError={errors.email}
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^\S+@\S+$/i,
+                    message: "Invalid email",
+                  },
+                })}
               />
               <AuthField
                 label={"password"}
@@ -38,6 +55,16 @@ const Login = () => {
                 Icon={LockIcon}
                 inputType={"password"}
                 placeholder={"Enter your password"}
+                isError={errors.password}
+                {...register("password", {
+                  required: "Password is required",
+                  pattern: {
+                    value:
+                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/,
+                    message:
+                      "Password must be 8+ chars, with uppercase, lowercase, number & special char",
+                  },
+                })}
               />
               <CTA
                 text={"Forgot password?"}

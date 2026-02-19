@@ -14,7 +14,7 @@ const Button = ({ text, type, PrefixIcon }) => {
 };
 
 const onClick = (e) => {
-  e.preventDefault();
+  // e.preventDefault();
 };
 
 export default Button;
